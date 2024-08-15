@@ -1,0 +1,19 @@
+{
+  "name": "Markdown Code",
+  "content_type": "SN|Component",
+  "main": "index.html",
+  "area": "editor-editor",
+  "spellcheckControl": true,
+  "note_type": "markdown",
+  "file_type": "md",
+  "showInGallery": true,
+  "identifier": "org.github.monaco",
+  "version": "1.0.0",
+  "url": "https://standardnote.github.io/markdown-code-plugin/markdown-code-online/dist/index.html",
+  "download_url": "https://raw.githubusercontent.com/standardnote/markdown-code-plugin/main/markdown-code-online/dist.zip",
+  "latest_url": "https://raw.githubusercontent.com/standardnote/markdown-code-plugin/main/markdown-code-online/markdown-code-online.json",
+  "publisher": "ixiumu",
+  "description": "Code editor",
+  "base64Hash": "",
+  "binaryHash": ""
+}
