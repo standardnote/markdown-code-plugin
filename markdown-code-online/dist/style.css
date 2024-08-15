@@ -1,0 +1,35 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+editor {
+    display: block;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    /* border-bottom: 20px solid transparent; */
+    border-top: 15px solid transparent;
+}
+
+body .monaco-editor,
+body .monaco-editor-background,
+body .monaco-editor .margin {
+    background-color: var(--sn-stylekit-editor-background-color);
+}
+
+body .monaco-editor .view-overlays .current-line-exact {
+    border-color: var(--sn-stylekit-editor-background-color);
+    border: none;
+}
+
+body .monaco-editor {
+    outline: none;
+}
