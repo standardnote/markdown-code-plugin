@@ -70,16 +70,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     function loadEditor() {
-      const editorEl = document.createElement('editor')
+      const editorEl = document.createElement('div')
+      editorEl.id = 'editor'
       document.body.append(editorEl)
-      // https://cdn.jsdelivr.net/npm/monaco-editor@0.50.0/min/vs/loader.js
-      // https://microsoft.github.io/monaco-editor/node_modules/monaco-editor/dev/vs/loader.js
-      require.config({ paths: { vs: 'monaco-editor/min/vs' } })
+      require.config({
+        paths: {
+          // vs: cr.isRunningInDesktopApplication() ? 'monaco-editor/min/vs' : 'https://cdn.jsdelivr.net/npm/monaco-editor@0.50.0/min/vs'
+          vs: 'monaco-editor/min/vs'
+        }
+      })
       require(['vs/editor/editor.main'], function () {
         // https://microsoft.github.io/monaco-editor/typedoc/variables/editor.EditorOptions.html
         editor = monaco.editor.create(editorEl, {
           value: workingNote.content.text,
           language: 'markdown',
+          contextmenu: false,
           lineNumbers: false,
           lineDecorationsWidth: 0,
           lineNumbersMinChars: 0,
@@ -95,6 +100,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
           }
           saveNote()
         })
+        // if (!cr.isRunningInDesktopApplication()) {
+        //   editor.updateOptions({
+        //     contextmenu: false
+        //   })
+        // }
         window.addEventListener('resize', e => editor.layout())
       })
     }
