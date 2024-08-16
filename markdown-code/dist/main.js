@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       require.config({
         paths: {
           // vs: cr.isRunningInDesktopApplication() ? 'monaco-editor/min/vs' : 'https://cdn.jsdelivr.net/npm/monaco-editor@0.50.0/min/vs'
-          vs: 'monaco-editor/min/vs'
+          vs: document.querySelector(`script[src$="/vs/loader.js"]`).src.slice(0, -10)
         }
       })
       require(['vs/editor/editor.main'], function () {
